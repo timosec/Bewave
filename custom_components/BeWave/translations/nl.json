@@ -18,11 +18,11 @@
       },
       "add_device": {
         "title": "Schakelaar toevoegen",
-        "description": "Vul de gegevens van de schakelaar in. 'Command to send' is de exacte TCP-tekst die Home Assistant naar BeWave stuurt. Voorbeeld: {command_example}. Laat de feedbackvelden leeg voor alleen momentary gedrag.",
+        "description": "Vul de gegevens van de schakelaar in. 'Trigger-commando (oude commandOn)' is de exacte TCP-tekst die Home Assistant naar BeWave stuurt. Voorbeeld: {command_example}. Laat de feedbackvelden leeg voor alleen momentary gedrag.",
         "data": {
           "id": "Schakelaar-ID",
           "name": "Naam",
-          "command_on": "Command to send",
+          "command_on": "Trigger-commando (oude commandOn)",
           "on_message": "Feedback bericht voor AAN",
           "off_message": "Feedback bericht voor UIT",
           "listen_port": "Luisterpoort",
@@ -50,11 +50,11 @@
       },
       "add_device": {
         "title": "Schakelaar toevoegen",
-        "description": "Vul de gegevens van de schakelaar in. 'Command to send' is de exacte TCP-tekst die Home Assistant naar BeWave stuurt. Voorbeeld: {command_example}.",
+        "description": "Vul de gegevens van de schakelaar in. 'Trigger-commando (oude commandOn)' is de exacte TCP-tekst die Home Assistant naar BeWave stuurt. Voorbeeld: {command_example}.",
         "data": {
           "id": "Schakelaar-ID",
           "name": "Naam",
-          "command_on": "Command to send",
+          "command_on": "Trigger-commando (oude commandOn)",
           "on_message": "Feedback bericht voor AAN",
           "off_message": "Feedback bericht voor UIT",
           "listen_port": "Luisterpoort",
@@ -69,11 +69,11 @@
       },
       "edit_device": {
         "title": "Schakelaar wijzigen",
-        "description": "Wijzig de gegevens van de schakelaar. 'Command to send' moet overeenkomen met de trigger die in BeWave is geconfigureerd. Voorbeeld: {command_example}.",
+        "description": "Wijzig de gegevens van de schakelaar. 'Trigger-commando (oude commandOn)' moet overeenkomen met de trigger die in BeWave is geconfigureerd. Voorbeeld: {command_example}.",
         "data": {
           "id": "Schakelaar-ID",
           "name": "Naam",
-          "command_on": "Command to send",
+          "command_on": "Trigger-commando (oude commandOn)",
           "on_message": "Feedback bericht voor AAN",
           "off_message": "Feedback bericht voor UIT",
           "listen_port": "Luisterpoort",

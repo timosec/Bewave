@@ -4,6 +4,8 @@ from __future__ import annotations
 import asyncio
 import contextlib
 import logging
+import socket
+import time
 from collections import defaultdict
 from collections.abc import Callable
 
@@ -63,27 +65,35 @@ class BeWaveHub:
     async def async_send_command(self, command: str) -> None:
         """Send a trigger command to BeWave.
 
-        Match the original Homebridge plugin behavior: CRLF line ending and
-        keep the socket open briefly after the write.
+        Match the Homebridge plugin as closely as possible:
+        - new TCP connection per trigger
+        - TCP_NODELAY enabled
+        - 2 second timeout
+        - CRLF line ending
+        - keep the socket open briefly after the write
         """
-        payload = f"{command}\r\n"
+        payload = f"{command}\r\n".encode("utf-8")
+        _LOGGER.info("BeWave connecteer naar %s:%s", self.host, DEFAULT_TARGET_PORT)
         _LOGGER.info("BeWave verzendt naar %s:%s -> %s", self.host, DEFAULT_TARGET_PORT, command)
-        reader, writer = await asyncio.wait_for(
-            asyncio.open_connection(self.host, DEFAULT_TARGET_PORT), timeout=3
-        )
         try:
-            writer.write(payload.encode("utf-8"))
-            await asyncio.wait_for(writer.drain(), timeout=3)
-            _LOGGER.debug("BeWave payload bytes: %r", payload.encode("utf-8"))
-            await asyncio.sleep(0.4)
+            await asyncio.to_thread(self._send_blocking, payload)
         except Exception:
-            _LOGGER.exception(
-                "BeWave verzenden mislukt naar %s:%s", self.host, DEFAULT_TARGET_PORT
-            )
+            _LOGGER.exception("BeWave verzenden mislukt naar %s:%s", self.host, DEFAULT_TARGET_PORT)
             raise
+        _LOGGER.info("BeWave verzenden voltooid naar %s:%s", self.host, DEFAULT_TARGET_PORT)
+
+    def _send_blocking(self, payload: bytes) -> None:
+        """Blocking send implementation that mirrors the Homebridge plugin."""
+        sock = socket.create_connection((self.host, DEFAULT_TARGET_PORT), timeout=2.0)
+        try:
+            sock.setsockopt(socket.IPPROTO_TCP, socket.TCP_NODELAY, 1)
+            sock.settimeout(2.0)
+            sock.sendall(payload)
+            time.sleep(0.4)
+            with contextlib.suppress(OSError):
+                sock.shutdown(socket.SHUT_WR)
         finally:
-            writer.close()
-            await writer.wait_closed()
+            sock.close()
 
     async def _handle_client(
         self, reader: asyncio.StreamReader, writer: asyncio.StreamWriter

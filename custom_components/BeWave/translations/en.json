@@ -18,11 +18,11 @@
       },
       "add_device": {
         "title": "Add switch",
-        "description": "Create one BeWave switch. 'Command to send' is the exact TCP text Home Assistant sends to BeWave. Example: {command_example}. Leave feedback fields empty for momentary-only behavior.",
+        "description": "Create one BeWave switch. 'Trigger command (old commandOn)' is the exact TCP text Home Assistant sends to BeWave. Example: {command_example}. Leave feedback fields empty for momentary-only behavior.",
         "data": {
           "id": "Switch ID",
           "name": "Name",
-          "command_on": "Command to send",
+          "command_on": "Trigger command (old commandOn)",
           "on_message": "Feedback message for ON",
           "off_message": "Feedback message for OFF",
           "listen_port": "Listen port",
@@ -50,11 +50,11 @@
       },
       "add_device": {
         "title": "Add switch",
-        "description": "Create one BeWave switch. 'Command to send' is the exact TCP text Home Assistant sends to BeWave. Example: {command_example}.",
+        "description": "Create one BeWave switch. 'Trigger command (old commandOn)' is the exact TCP text Home Assistant sends to BeWave. Example: {command_example}.",
         "data": {
           "id": "Switch ID",
           "name": "Name",
-          "command_on": "Command to send",
+          "command_on": "Trigger command (old commandOn)",
           "on_message": "Feedback message for ON",
           "off_message": "Feedback message for OFF",
           "listen_port": "Listen port",
@@ -69,11 +69,11 @@
       },
       "edit_device": {
         "title": "Edit switch",
-        "description": "Edit the switch details. 'Command to send' should match the trigger configured in BeWave. Example: {command_example}.",
+        "description": "Edit the switch details. 'Trigger command (old commandOn)' should match the trigger configured in BeWave. Example: {command_example}.",
         "data": {
           "id": "Switch ID",
           "name": "Name",
-          "command_on": "Command to send",
+          "command_on": "Trigger command (old commandOn)",
           "on_message": "Feedback message for ON",
           "off_message": "Feedback message for OFF",
           "listen_port": "Listen port",
