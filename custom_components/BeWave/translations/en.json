@@ -10,30 +10,29 @@
         }
       },
       "device_menu": {
-        "title": "Add switches",
-        "description": "Configured switches: {device_count}. You can add a switch now, or finish setup once at least one switch exists.",
+        "title": "Add zones",
+        "description": "Configured zones: {zone_count}. Each zone creates a stateless trigger button and, when feedback fields are filled in, a separate status entity.",
         "data": {
           "action": "Action"
         }
       },
       "add_device": {
-        "title": "Add switch",
-        "description": "Create one BeWave switch. 'Trigger command (old commandOn)' is the exact TCP text Home Assistant sends to BeWave. Example: {command_example}. Leave feedback fields empty for momentary-only behavior.",
+        "title": "Add zone",
+        "description": "Create one BeWave zone. The trigger command becomes a button entity. The feedback messages create a separate read-only status entity.",
         "data": {
-          "id": "Switch ID",
-          "name": "Name",
-          "command_on": "Trigger command (old commandOn)",
-          "on_message": "Feedback message for ON",
-          "off_message": "Feedback message for OFF",
-          "listen_port": "Listen port",
-          "momentary_reset_ms": "Momentary reset delay (ms)"
+          "id": "Zone ID",
+          "name": "Zone name",
+          "command_on": "HTTP command to BeWave",
+          "on_message": "HTTP output on request",
+          "off_message": "HTTP output off request",
+          "listen_port": "Listen port"
         }
       }
     },
     "error": {
       "invalid_host": "Enter a valid host or IP address.",
-      "at_least_one_device": "Add at least one switch before finishing setup.",
-      "invalid_device": "Check the switch fields. Name and command are required, and feedback must contain both ON and OFF messages if used."
+      "at_least_one_device": "Add at least one zone before finishing setup.",
+      "invalid_device": "Check the zone fields. Name and command are required, and feedback must contain both ON and OFF messages if used."
     },
     "abort": {
       "already_configured": "This BeWave hub is already configured."
@@ -42,53 +41,51 @@
   "options": {
     "step": {
       "init": {
-        "title": "Manage switches",
-        "description": "Configured switches: {device_count}. Add, edit, or remove switches.",
+        "title": "Manage zones",
+        "description": "Configured zones: {zone_count}. Add, edit, or remove zones.",
         "data": {
           "action": "Action"
         }
       },
       "add_device": {
-        "title": "Add switch",
-        "description": "Create one BeWave switch. 'Trigger command (old commandOn)' is the exact TCP text Home Assistant sends to BeWave. Example: {command_example}.",
+        "title": "Add zone",
+        "description": "Create one BeWave zone. The trigger command becomes a button entity. The feedback messages create a separate read-only status entity.",
         "data": {
-          "id": "Switch ID",
-          "name": "Name",
-          "command_on": "Trigger command (old commandOn)",
-          "on_message": "Feedback message for ON",
-          "off_message": "Feedback message for OFF",
-          "listen_port": "Listen port",
-          "momentary_reset_ms": "Momentary reset delay (ms)"
+          "id": "Zone ID",
+          "name": "Zone name",
+          "command_on": "HTTP command to BeWave",
+          "on_message": "HTTP output on request",
+          "off_message": "HTTP output off request",
+          "listen_port": "Listen port"
         }
       },
       "select_edit_device": {
-        "title": "Select switch to edit",
+        "title": "Select zone to edit",
         "data": {
-          "device_id": "Switch"
+          "device_id": "Zone"
         }
       },
       "edit_device": {
-        "title": "Edit switch",
-        "description": "Edit the switch details. 'Trigger command (old commandOn)' should match the trigger configured in BeWave. Example: {command_example}.",
+        "title": "Edit zone",
+        "description": "Edit the zone details. The trigger command is sent when the button is pressed. Feedback messages update the separate status entity.",
         "data": {
-          "id": "Switch ID",
-          "name": "Name",
-          "command_on": "Trigger command (old commandOn)",
-          "on_message": "Feedback message for ON",
-          "off_message": "Feedback message for OFF",
-          "listen_port": "Listen port",
-          "momentary_reset_ms": "Momentary reset delay (ms)"
+          "id": "Zone ID",
+          "name": "Zone name",
+          "command_on": "HTTP command to BeWave",
+          "on_message": "HTTP output on request",
+          "off_message": "HTTP output off request",
+          "listen_port": "Listen port"
         }
       },
       "select_delete_device": {
-        "title": "Select switch to remove",
+        "title": "Select zone to remove",
         "data": {
-          "device_id": "Switch"
+          "device_id": "Zone"
         }
       }
     },
     "error": {
-      "invalid_device": "Check the switch fields. Name and command are required, and feedback must contain both ON and OFF messages if used."
+      "invalid_device": "Check the zone fields. Name and command are required, and feedback must contain both ON and OFF messages if used."
     }
   }
 }

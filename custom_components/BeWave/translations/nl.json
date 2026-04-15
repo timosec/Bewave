@@ -10,30 +10,29 @@
         }
       },
       "device_menu": {
-        "title": "BeWave schakelaars",
-        "description": "Geconfigureerde schakelaars: {device_count}. Voeg nu een schakelaar toe, of rond af zodra er minimaal \u00e9\u00e9n schakelaar bestaat.",
+        "title": "BeWave zones",
+        "description": "Geconfigureerde zones: {zone_count}. Elke zone maakt een losse triggerknop en, als de feedbackvelden zijn ingevuld, een aparte status-entiteit.",
         "data": {
           "action": "Actie"
         }
       },
       "add_device": {
-        "title": "Schakelaar toevoegen",
-        "description": "Vul de gegevens van de schakelaar in. 'Trigger-commando (oude commandOn)' is de exacte TCP-tekst die Home Assistant naar BeWave stuurt. Voorbeeld: {command_example}. Laat de feedbackvelden leeg voor alleen momentary gedrag.",
+        "title": "Zone toevoegen",
+        "description": "Voer de gegevens van de zone in. Het HTTP commando naar BeWave wordt een knop-entiteit. De feedbackberichten maken een aparte alleen-lezen status-entiteit.",
         "data": {
-          "id": "Schakelaar-ID",
-          "name": "Naam",
-          "command_on": "Trigger-commando (oude commandOn)",
-          "on_message": "Feedback bericht voor AAN",
-          "off_message": "Feedback bericht voor UIT",
-          "listen_port": "Luisterpoort",
-          "momentary_reset_ms": "Momentary reset vertraging (ms)"
+          "id": "Zone-ID",
+          "name": "Zone naam",
+          "command_on": "HTTP commando naar BeWave",
+          "on_message": "HTTP-Uitgang-aan-verzoek",
+          "off_message": "HTTP-Uitgang-uit-verzoek",
+          "listen_port": "Luisterpoort"
         }
       }
     },
     "error": {
       "invalid_host": "Vul een geldige host of IP-adres in.",
-      "at_least_one_device": "Voeg minimaal \u00e9\u00e9n schakelaar toe voordat je afrondt.",
-      "invalid_device": "Controleer de velden van de schakelaar. Naam en commando zijn verplicht en feedback moet zowel een AAN- als UIT-bericht bevatten als je het gebruikt."
+      "at_least_one_device": "Voeg minimaal een zone toe voordat je afrondt.",
+      "invalid_device": "Controleer de zonevelden. Naam en commando zijn verplicht en feedback moet zowel een AAN- als UIT-bericht bevatten als je het gebruikt."
     },
     "abort": {
       "already_configured": "Deze BeWave hub is al geconfigureerd."
@@ -42,53 +41,51 @@
   "options": {
     "step": {
       "init": {
-        "title": "BeWave schakelaars beheren",
-        "description": "Geconfigureerde schakelaars: {device_count}. Voeg schakelaars toe, wijzig ze of verwijder ze.",
+        "title": "BeWave zones beheren",
+        "description": "Geconfigureerde zones: {zone_count}. Voeg zones toe, wijzig ze of verwijder ze.",
         "data": {
           "action": "Actie"
         }
       },
       "add_device": {
-        "title": "Schakelaar toevoegen",
-        "description": "Vul de gegevens van de schakelaar in. 'Trigger-commando (oude commandOn)' is de exacte TCP-tekst die Home Assistant naar BeWave stuurt. Voorbeeld: {command_example}.",
+        "title": "Zone toevoegen",
+        "description": "Voer de gegevens van de zone in. Het HTTP commando naar BeWave wordt een knop-entiteit. De feedbackberichten maken een aparte alleen-lezen status-entiteit.",
         "data": {
-          "id": "Schakelaar-ID",
-          "name": "Naam",
-          "command_on": "Trigger-commando (oude commandOn)",
-          "on_message": "Feedback bericht voor AAN",
-          "off_message": "Feedback bericht voor UIT",
-          "listen_port": "Luisterpoort",
-          "momentary_reset_ms": "Momentary reset vertraging (ms)"
+          "id": "Zone-ID",
+          "name": "Zone naam",
+          "command_on": "HTTP commando naar BeWave",
+          "on_message": "HTTP-Uitgang-aan-verzoek",
+          "off_message": "HTTP-Uitgang-uit-verzoek",
+          "listen_port": "Luisterpoort"
         }
       },
       "select_edit_device": {
-        "title": "Kies schakelaar",
+        "title": "Kies zone",
         "data": {
-          "device_id": "Schakelaar"
+          "device_id": "Zone"
         }
       },
       "edit_device": {
-        "title": "Schakelaar wijzigen",
-        "description": "Wijzig de gegevens van de schakelaar. 'Trigger-commando (oude commandOn)' moet overeenkomen met de trigger die in BeWave is geconfigureerd. Voorbeeld: {command_example}.",
+        "title": "Zone wijzigen",
+        "description": "Wijzig de zonegegevens. Het HTTP commando naar BeWave wordt verstuurd wanneer je op de knop drukt. De feedbackberichten werken de aparte status-entiteit bij.",
         "data": {
-          "id": "Schakelaar-ID",
-          "name": "Naam",
-          "command_on": "Trigger-commando (oude commandOn)",
-          "on_message": "Feedback bericht voor AAN",
-          "off_message": "Feedback bericht voor UIT",
-          "listen_port": "Luisterpoort",
-          "momentary_reset_ms": "Momentary reset vertraging (ms)"
+          "id": "Zone-ID",
+          "name": "Zone naam",
+          "command_on": "HTTP commando naar BeWave",
+          "on_message": "HTTP-Uitgang-aan-verzoek",
+          "off_message": "HTTP-Uitgang-uit-verzoek",
+          "listen_port": "Luisterpoort"
         }
       },
       "select_delete_device": {
-        "title": "Schakelaar verwijderen",
+        "title": "Zone verwijderen",
         "data": {
-          "device_id": "Schakelaar"
+          "device_id": "Zone"
         }
       }
     },
     "error": {
-      "invalid_device": "Controleer de velden van de schakelaar. Naam en commando zijn verplicht en feedback moet zowel een AAN- als UIT-bericht bevatten als je het gebruikt."
+      "invalid_device": "Controleer de zonevelden. Naam en commando zijn verplicht en feedback moet zowel een AAN- als UIT-bericht bevatten als je het gebruikt."
     }
   }
 }

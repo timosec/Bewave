@@ -17,7 +17,7 @@ from .const import (
 
 @dataclass(slots=True)
 class BeWaveDevice:
-    """Normalized device config."""
+    """Normalized zone config."""
 
     id: str
     name: str

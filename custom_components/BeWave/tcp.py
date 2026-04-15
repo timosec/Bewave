@@ -28,6 +28,7 @@ class BeWaveHub:
         self._listeners: dict[str, list[Callable[[bool], None]]] = defaultdict(list)
         self._device_by_message_port: dict[tuple[int, str], BeWaveDevice] = {}
         self._device_by_id: dict[str, BeWaveDevice] = {device.id: device for device in devices}
+        self._state_by_device_id: dict[str, bool | None] = {device.id: None for device in devices}
 
         for device in devices:
             if device.has_feedback:
@@ -123,6 +124,7 @@ class BeWaveHub:
             return
 
         new_state = message == device.on_message
+        self._state_by_device_id[device.id] = new_state
         _LOGGER.info("BeWave statusupdate %s -> %s", device.name, "AAN" if new_state else "UIT")
         for callback in list(self._listeners[device.id]):
             callback(new_state)
@@ -130,3 +132,7 @@ class BeWaveHub:
     def get_device(self, device_id: str) -> BeWaveDevice:
         """Return a device by id."""
         return self._device_by_id[device_id]
+
+    def get_state(self, device_id: str) -> bool | None:
+        """Return the latest known state for a device."""
+        return self._state_by_device_id.get(device_id)
