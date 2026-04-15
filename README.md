@@ -32,7 +32,7 @@ The integration still uses raw TCP under the hood, matching the original Homebri
 - If the feedback fields are left empty, only the trigger button will be created.
 - Existing old switch entities from earlier builds may remain in the entity registry and can be removed manually.
 
-## Settup
+## Setup
 
 <img width="730" height="383" alt="image" src="https://github.com/user-attachments/assets/42205247-fa12-4075-97ed-ee1e62825e04" />
 
