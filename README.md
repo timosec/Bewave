@@ -32,6 +32,7 @@ The integration still uses raw TCP under the hood, matching the original Homebri
 - If the feedback fields are left empty, only the trigger button will be created.
 - Existing old switch entities from earlier builds may remain in the entity registry and can be removed manually.
 
+## Settup
 
 <img width="730" height="383" alt="image" src="https://github.com/user-attachments/assets/42205247-fa12-4075-97ed-ee1e62825e04" />
 
@@ -41,7 +42,7 @@ Enter the IP address of the Hub.
 
 First, configure the first zone:
 
-<img width="727" height="967" alt="image" src="https://github.com/user-attachments/assets/76f1181a-90f0-4d20-aad6-cae9a93008fc" />
+<img width="729" height="985" alt="image" src="https://github.com/user-attachments/assets/5caddc44-c569-4e26-83be-69fce4cffa56" />
 
 1: Zone name</br>
 2: Command to send to the Bewave hub</br>
@@ -53,3 +54,8 @@ First, configure the first zone:
 
 1: To add an new zone </br>
 2: to save the zone
+
+## Settings in the BeWave Hub: 
+
+<img width="600" height="1304" alt="image" src="https://github.com/user-attachments/assets/dd5bbaac-d990-49a1-83c0-d8450676ff2d" />
+
