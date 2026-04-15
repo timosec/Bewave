@@ -31,3 +31,19 @@ The integration still uses raw TCP under the hood, matching the original Homebri
 
 - If the feedback fields are left empty, only the trigger button will be created.
 - Existing old switch entities from earlier builds may remain in the entity registry and can be removed manually.
+
+
+<img width="730" height="383" alt="image" src="https://github.com/user-attachments/assets/42205247-fa12-4075-97ed-ee1e62825e04" />
+
+Enter the IP address of the Hub.
+
+<img width="733" height="385" alt="image" src="https://github.com/user-attachments/assets/d00784ef-0e9c-478b-82b7-75d6c91cbc77" />
+
+First, configure the first zone:
+
+<img width="727" height="967" alt="image" src="https://github.com/user-attachments/assets/76f1181a-90f0-4d20-aad6-cae9a93008fc" />
+
+1: Zone name
+2: Command to send to the Bewave hub
+3: Status (ON) – used to receive the ON state from the Bewave hub
+5: Status (OFF) – used to receive the OFF state from the Bewave hub
