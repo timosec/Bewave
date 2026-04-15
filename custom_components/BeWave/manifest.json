@@ -1,7 +1,7 @@
 {
   "domain": "bewave",
-  "name": "Bewave",
-  "version": "0.4.0",
+  "name": "BeWave",
+  "version": "0.4.1",
   "documentation": "https://github.com/timosec/Bewave",
   "issue_tracker": "https://github.com/timosec/Bewave/issues",
   "integration_type": "hub",
