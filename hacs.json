@@ -1,6 +1,6 @@
 {
-    "name": "BeWave",
-    "hacs": "1.6.0",
-    "homeassistant": "2025.1.2",
-    "render_readme": true
+  "name": "BeWave",
+  "render_readme": true,
+  "homeassistant": "2025.1.0",
+  "country": "NL"
 }
