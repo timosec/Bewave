@@ -8,10 +8,8 @@ on:
 
 jobs:
   hassfest:
+    name: Hassfest
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout the repository
-        uses: actions/checkout@v4
-
-      - name: Run Hassfest validation
-        uses: home-assistant/actions/hassfest@master
+      - uses: actions/checkout@v4
+      - uses: home-assistant/actions/hassfest@master
